@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keuken Zutphen op maat | Keukenhuis Lochem — VOORBEELD</title>
+  <meta name="description" content="Op zoek naar een keuken in Zutphen? Bij Keukenhuis Lochem ontwerpen we maatwerkkeukens zonder druk. Showroom in Lochem op ca. 20 minuten." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14181c;
+      --muted: #5a636c;
+      --paper: #f3f4f2;
+      --paper-2: #e8ebe6;
+      --line: #d5dad3;
+      --accent: #3d5a45;
+      --accent-deep: #2c4233;
+      --accent-soft: #c5d4c8;
+      --white: #fff;
+      --max: 1100px;
+      --form-hang: 14.5rem;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Outfit, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+      font-size: 17px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+
+    .dev-banner {
+      background: var(--ink);
+      color: var(--accent-soft);
+      font-size: 0.8rem;
+      padding: 0.65rem 1rem;
+      text-align: center;
+      line-height: 1.45;
+    }
+    .dev-banner strong { color: #fff; }
+
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 0.85rem 0;
+    }
+    .nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav img { height: 42px; width: auto; }
+    .nav-links { display: flex; gap: 1.1rem; font-size: 0.9rem; }
+    .nav-links a { text-decoration: none; color: var(--ink); }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: var(--white); }
+    .btn-primary:hover { background: var(--accent-deep); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.45);
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+
+    .hero {
+      color: var(--white);
+      overflow: visible;
+      background:
+        linear-gradient(115deg, rgba(20,24,28,.88) 0%, rgba(20,24,28,.45) 55%, rgba(20,24,28,.7) 100%),
+        url("https://keukenhuislochem.nl/wp-content/uploads/2023/06/Moderne-keuken-met-hout-Keukenhuis-Lochem-Arnhem-NTorella-Fotografie-11-min.jpg") center/cover no-repeat;
+    }
+    .hero-grid {
+      --form-col: minmax(320px, 360px);
+      display: grid;
+      grid-template-columns: 1fr var(--form-col);
+      gap: 1.75rem;
+      align-items: start;
+      padding: 2.75rem 0 0;
+    }
+    .hero-copy {
+      max-width: 34rem;
+      padding: 0.35rem 0 2rem;
+    }
+    .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.45rem;
+      opacity: 0.92;
+    }
+    .hero h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.85rem, 4.2vw, 2.75rem);
+      line-height: 1.12;
+      margin: 0 0 0.65rem;
+    }
+    .hero .sub {
+      margin: 0 0 1.1rem;
+      font-size: 1.02rem;
+      color: rgba(255,255,255,.92);
+    }
+
+    .lead-panel {
+      background: rgba(255,255,255,.97);
+      border: 1px solid rgba(213,218,211,.9);
+      color: var(--ink);
+      padding: 1.05rem 1.05rem 1.1rem;
+      width: 100%;
+      position: relative;
+      z-index: 3;
+      align-self: end;
+      margin-bottom: calc(var(--form-hang) * -1);
+    }
+    .lead-panel .form-title {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.12rem;
+      font-weight: 400;
+      margin: 0 0 0.12rem;
+      color: var(--ink);
+    }
+    .lead-panel .form-hint {
+      margin: 0 0 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .lead-panel form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem 0.65rem;
+    }
+    .lead-panel form .full { grid-column: 1 / -1; }
+    .lead-panel label {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .lead-panel input,
+    .lead-panel textarea {
+      width: 100%;
+      padding: 0.55rem 0.6rem;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      font: inherit;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+    .lead-panel textarea { resize: vertical; min-height: 56px; }
+    .lead-panel input:focus,
+    .lead-panel textarea:focus {
+      outline: 1px solid var(--accent);
+      border-color: var(--accent);
+    }
+    .lead-panel .btn {
+      width: 100%;
+      margin-top: 0.15rem;
+      padding: 0.68rem 0.9rem;
+    }
+    .google-proof {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      color: var(--ink);
+      margin-top: 0.7rem;
+      padding-top: 0.7rem;
+      border-top: 1px solid var(--line);
+    }
+    .google-proof svg { flex-shrink: 0; width: 18px; height: 18px; }
+    .google-proof .stars { color: #e2a03f; letter-spacing: 0.04em; font-size: 0.8rem; }
+    .google-proof .meta { font-size: 0.7rem; color: var(--muted); line-height: 1.2; }
+    .google-proof .meta strong { display: block; color: var(--ink); font-size: 0.8rem; }
+
+    #maatwerk {
+      padding-top: 1.1rem;
+      padding-bottom: 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .maatwerk-grid {
+      display: grid;
+      grid-template-columns: 1fr minmax(320px, 360px);
+      gap: 1.75rem;
+      align-items: start;
+    }
+    .maatwerk-intro { min-width: 0; padding-top: 0.15rem; }
+    .maatwerk-intro .lede { margin-bottom: 0; }
+    .maatwerk-clear {
+      min-height: var(--form-hang);
+      pointer-events: none;
+    }
+    .maatwerk-proof { grid-column: 1 / -1; margin-top: 1.5rem; }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 2.25rem 0 0;
+      }
+      .hero-copy { max-width: none; padding: 0 0 1.5rem; }
+      .lead-panel {
+        margin-bottom: 0;
+        align-self: stretch;
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(50% - 50vw);
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 1.15rem 1.15rem 1.25rem;
+      }
+      .maatwerk-grid { grid-template-columns: 1fr; gap: 0; }
+      .maatwerk-clear { display: none; }
+      .maatwerk-proof { margin-top: 1.5rem; }
+      #maatwerk { padding-top: 2.25rem; }
+      :root { --form-hang: 0rem; }
+    }
+
+    section { padding: 3.5rem 0; }
+    section.hero { padding: 0; }
+    section.alt { background: var(--paper-2); }
+    section.dark { background: var(--ink); color: var(--white); }
+    .eyebrow {
+      margin: 0 0 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .dark .eyebrow { color: var(--accent-soft); }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      line-height: 1.25;
+      margin: 0 0 0.7rem;
+    }
+    .lede {
+      max-width: 38rem;
+      color: var(--muted);
+      margin: 0 0 1.6rem;
+    }
+    .dark .lede { color: var(--accent-soft); }
+    .block-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--accent-soft);
+      padding: 0.18rem 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    .placeholder-tag {
+      display: inline-block;
+      background: #dce8df;
+      color: #2c4233;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.1rem 0.35rem;
+      margin-left: 0.2rem;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 720px) { .proof-grid { grid-template-columns: 1fr; } }
+    .proof-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+    }
+    .proof-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .proof-card .shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 25%, rgba(20,24,28,.92) 100%);
+    }
+    .proof-card .txt { position: relative; z-index: 1; padding: 1.1rem 1rem; }
+    .proof-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; font-family: Fraunces, Georgia, serif; font-weight: 400; }
+    .proof-card p { margin: 0; font-size: 0.88rem; color: rgba(255,255,255,.88); }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+    .photo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+    .photo-pair img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+    .meta-line {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 1000px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+    .step { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
+    .step img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .step .body { padding: 0.9rem 0.95rem 1.05rem; }
+    .step .num {
+      font-family: Fraunces, Georgia, serif;
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin: 0 0 0.25rem;
+    }
+    .step h3 { margin: 0 0 0.35rem; font-size: 1.02rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-grid img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+    @media (max-width: 800px) { .reviews { grid-template-columns: 1fr; } }
+    .review {
+      background: var(--white);
+      padding: 1.15rem 1.1rem;
+      border-top: 3px solid var(--accent);
+    }
+    .stars { color: #e2a03f; margin: 0 0 0.55rem; letter-spacing: 0.06em; }
+    .review p { margin: 0 0 0.75rem; font-size: 0.96rem; }
+    .review cite { font-style: normal; font-size: 0.84rem; color: var(--muted); font-weight: 600; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 800px) { .projects { grid-template-columns: 1fr; } }
+    .project {
+      text-decoration: none;
+      color: inherit;
+      background: var(--white);
+      display: block;
+    }
+    .project img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .project figcaption { padding: 0.85rem 0.95rem 1rem; }
+    .project .place {
+      margin: 0 0 0.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .project h3 { margin: 0 0 0.25rem; font-size: 1.02rem; }
+    .project p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) { .local-grid { grid-template-columns: 1fr; } }
+    .local-grid img {
+      width: 100%;
+      aspect-ratio: 5/4;
+      object-fit: cover;
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 0.9rem 0;
+    }
+    .faq details:first-of-type { border-top: 1px solid var(--line); }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--accent); font-size: 1.2rem; font-weight: 400; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p {
+      margin: 0.65rem 0 0.1rem;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1.75rem;
+      align-items: end;
+    }
+    @media (max-width: 800px) { .cta-grid { grid-template-columns: 1fr; } }
+    .cta-meta { color: var(--accent-soft); font-size: 0.95rem; line-height: 1.7; margin: 0 0 1rem; }
+    .cta-meta strong { color: #fff; }
+
+    footer {
+      padding: 1.4rem 0 1.8rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="dev-banner">
+    <strong>Voorbeeld websiteteam — Keukenhuis Lochem</strong> —
+    Template <code>/keuken-zutphen/</code> · formulier rechts in hero (zoals Piet de Wit) · klantpreview.
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="https://keukenhuislochem.nl/">
+        <img src="https://keukenhuislochem.nl/wp-content/uploads/2021/07/Keukenhuis_logo_zwart-removebg-preview.png" alt="Keukenhuis Lochem" />
+      </a>
+      <nav class="nav-links" aria-label="Hoofdmenu">
+        <a href="https://keukenhuislochem.nl/keukens/">Keukens</a>
+        <a href="https://keukenhuislochem.nl/over-ons/">Over ons</a>
+        <a href="https://keukenhuislochem.nl/lookbook/">Lookbook</a>
+        <a href="https://keukenhuislochem.nl/contact/">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#formulier" style="padding:0.5rem 0.85rem;font-size:0.86rem;">Plan afspraak</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="brand">Keukenhuis Lochem</p>
+        <h1>Keuken Zutphen op maat</h1>
+        <p class="sub">
+          Geen standaardmodel uit de folder. Wel een keuken die past bij jouw woning in Zutphen of Warnsveld —
+          ontworpen in onze showroom in Lochem (±20 min) en geplaatst door eigen monteurs.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="#maatwerk">Bekijk hoe wij werken</a>
+        </div>
+      </div>
+
+      <aside class="lead-panel" id="formulier" aria-label="Aanvraagformulier">
+        <p class="form-title">Plan je afspraak</p>
+        <p class="form-hint">Vrijblijvend. Wij nemen contact op.</p>
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Demo: koppel aan jullie afspraakflow / mail.');">
+          <div>
+            <label for="naam">Naam</label>
+            <input id="naam" name="naam" type="text" required autocomplete="name" />
+          </div>
+          <div>
+            <label for="tel">Telefoon</label>
+            <input id="tel" name="tel" type="tel" required autocomplete="tel" />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+          </div>
+          <div>
+            <label for="plaats">Woonplaats</label>
+            <input id="plaats" name="plaats" type="text" value="Zutphen" />
+          </div>
+          <div class="full">
+            <label for="vraag">Korte vraag</label>
+            <textarea id="vraag" name="vraag" rows="2" placeholder="Nieuwe keuken, renovatie of showroombezoek…"></textarea>
+          </div>
+          <div class="full">
+            <button class="btn btn-primary" type="submit">Plan mijn afspraak</button>
+          </div>
+        </form>
+        <a class="google-proof" href="https://www.google.com/maps/place/Walderstraat+5,+7241+BH+Lochem" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.5-.4-3.5z"/>
+            <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+            <path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.3 35.4 26.8 36 24 36c-5.2 0-9.6-3.1-11.3-7.5l-6.5 5C9.5 39.6 16.2 44 24 44z"/>
+            <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.2 5.5l.1.1 6.3 5.3C39.2 37.3 44 32 44 24c0-1.3-.1-2.5-.4-3.5z"/>
+          </svg>
+          <div>
+            <div class="stars" aria-label="4,6 sterren">★★★★★</div>
+            <div class="meta">
+              <strong>4,6 / 5</strong>
+              Google reviews
+            </div>
+          </div>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="maatwerk">
+    <div class="wrap maatwerk-grid">
+      <div class="maatwerk-intro">
+        <p class="eyebrow">Maatwerk</p>
+        <h2>Geen cataloguskeuken. Wel een keuken die bij Zutphen past.</h2>
+        <p class="lede">
+          We beginnen bij jouw plattegrond, lichtinval en manier van koken — niet bij een modelnummer.
+          Fronten, bladen en apparatuur kies je in de showroom. Montage doen we met eigen mensen.
+        </p>
+      </div>
+      <div class="maatwerk-clear" aria-hidden="true"></div>
+      <div class="maatwerk-proof">
+        <div class="proof-grid">
+          <article class="proof-card">
+            <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/05/LO-RES-Showroom-Woonklaar.nl-door-NTorella-Fotografie-3.jpg" alt="Showroom Lochem" />
+            <div class="shade"></div>
+            <div class="txt">
+              <h3>Showroom Lochem</h3>
+              <p>Materialen zien en voelen — ±20 min vanuit Zutphen.</p>
+            </div>
+          </article>
+          <article class="proof-card">
+            <img src="https://keukenhuislochem.nl/wp-content/uploads/2023/06/4-Keukenhuis-Lochem-Lochem-Lochem-2023-45-min.jpg" alt="Ontwerp op maat" />
+            <div class="shade"></div>
+            <div class="txt">
+              <h3>Ontwerp op maat</h3>
+              <p>Indeling volgt jouw woning, niet een folder.</p>
+            </div>
+          </article>
+          <article class="proof-card">
+            <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/09/Keukenhuis-Lochem-zwarte-keuken-23-min.jpg" alt="Eigen montage" />
+            <div class="shade"></div>
+            <div class="txt">
+              <h3>Eigen montage</h3>
+              <p>Plaatsing bij jou thuis + nazorg na oplevering.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="proces">
+    <div class="wrap">
+      <p class="eyebrow">Proces</p>
+      <h2>Van eerste gesprek tot keuken in Zutphen</h2>
+      <p class="lede">Vijf duidelijke stappen. Je gaat pas verder als ontwerp en offerte kloppen.</p>
+      <div class="steps">
+        <article class="step">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/05/LO-RES-Showroom-Woonklaar.nl-door-NTorella-Fotografie-3.jpg" alt="Kennismaking" />
+          <div class="body">
+            <p class="num">01</p>
+            <h3>Kennismaking</h3>
+            <p>Showroom Lochem: wensen, woning, budgetrichting — ook buiten openingstijd op afspraak.</p>
+          </div>
+        </article>
+        <article class="step">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2023/06/Moderne-keuken-met-hout-Keukenhuis-Lochem-Arnhem-NTorella-Fotografie-11-min.jpg" alt="Ontwerp" />
+          <div class="body">
+            <p class="num">02</p>
+            <h3>Ontwerp</h3>
+            <p>Maatwerkontwerp. Materialen in het echt. Opties naast elkaar tot het klopt.</p>
+          </div>
+        </article>
+        <article class="step">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/08/Oplevering-moderne-woonkeuken-wierden-3-min.jpg" alt="Offerte" />
+          <div class="body">
+            <p class="num">03</p>
+            <h3>Offerte</h3>
+            <p>Heldere prijs op basis van jouw ontwerp. Pas na akkoord verder.</p>
+          </div>
+        </article>
+        <article class="step">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2023/10/HI-RES-KHL-Stam-Nijverdal-NTorella-Fotografie-7-min.jpg" alt="Planning" />
+          <div class="body">
+            <p class="num">04</p>
+            <h3>Planning</h3>
+            <p>Productie voorbereiden en montage inplannen in Zutphen of Warnsveld.</p>
+          </div>
+        </article>
+        <article class="step">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2023/06/Zwarte-keuken-Keukenhuis-Lochem-Heeten-NTorella-Fotografie-11-min.jpg" alt="Montage" />
+          <div class="body">
+            <p class="num">05</p>
+            <h3>Montage</h3>
+            <p>Eigen monteurs + nazorg. Klaar als jij er prettig mee woont.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="over-ons">
+    <div class="wrap about-grid">
+      <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/11/FB-en-Insta-Erik-Keukenhuis-Lochem-31-scaled.jpg" alt="Keukenhuis Lochem" />
+      <div>
+        <p class="eyebrow">Over ons</p>
+        <h2>Even voorstellen: Keukenhuis Lochem</h2>
+        <p class="lede" style="margin-bottom:1rem;">
+          Keukenspecialist met showroom aan de Walderstraat in Lochem. We ontwerpen unieke maatwerkkeukens
+          voor Lochem en de wijde omgeving — waaronder Zutphen. Persoonlijke aandacht, sterke ontwerpen,
+          montage door eigen vakmensen.
+        </p>
+        <p style="color:var(--muted);">
+          Geen megastore-formule. Je wordt begeleid door een team dat meedenkt over indeling, materialen
+          en praktische details — tot de keuken bij jou thuis staat.
+        </p>
+        <p style="margin-top:1rem;"><a href="https://keukenhuislochem.nl/over-ons/">Meer over ons →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="projecten">
+    <div class="wrap">
+      <p class="eyebrow">Projecten</p>
+      <h2>Laat je inspireren door gerealiseerde keukens</h2>
+      <p class="lede">Herken je iets van jouw wens? Neem die voorbeelden mee naar het gesprek.</p>
+      <div class="projects">
+        <a class="project" href="https://keukenhuislochem.nl/keukens/">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/09/zwarte-keukens-keukenhuis-lochem.jpg" alt="Zwarte keuken" />
+          <figcaption>
+            <p class="place">Project</p>
+            <h3>Zwarte woonkeuken</h3>
+            <p>Strak, contrast en veel karakter.</p>
+          </figcaption>
+        </a>
+        <a class="project" href="https://keukenhuislochem.nl/keukens/">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/09/witte-keuken-grijs-blad-keukenhuis-lochem.jpg" alt="Witte keuken" />
+          <figcaption>
+            <p class="place">Project</p>
+            <h3>Wit met grijs blad</h3>
+            <p>Lichte keuken, rustig en ruimtelijk.</p>
+          </figcaption>
+        </a>
+        <a class="project" href="https://keukenhuislochem.nl/keukens/">
+          <img src="https://keukenhuislochem.nl/wp-content/uploads/2023/06/Moderne-keuken-met-hout-Keukenhuis-Lochem-Arnhem-NTorella-Fotografie-11-min.jpg" alt="Houten accenten" />
+          <figcaption>
+            <p class="place">Project</p>
+            <h3>Modern met hout</h3>
+            <p>Warmte én strakke lijnen.</p>
+          </figcaption>
+        </a>
+      </div>
+      <p style="margin:1.25rem 0 0;"><a href="https://keukenhuislochem.nl/keukens/">Bekijk meer keukens →</a></p>
+    </div>
+  </section>
+
+  <section id="lokaal">
+    <div class="wrap local-grid">
+      <div>
+        <p class="eyebrow">Zutphen &amp; omgeving</p>
+        <h2>Keuken laten maken vanuit Zutphen: dichtbij genoeg</h2>
+        <p class="lede">
+          Woon je in Zutphen, Warnsveld of vlakbij? Onze showroom in Lochem is ongeveer twintig minuten rijden.
+          Je hoeft geen keukenzaak om de hoek in Zutphen te hebben om serieus geholpen te worden.
+        </p>
+        <p style="color:var(--muted);">
+          Eerlijk advies, een ontwerp dat bij je huis past, en een nette oplevering — dat is het traject.
+          Twijfel je tussen volledig nieuw of slimme renovatie? Neem die vraag mee naar het eerste gesprek.
+        </p>
+      </div>
+      <img src="https://keukenhuislochem.nl/wp-content/uploads/2022/03/HI-RES-Keukenhuis-Lochem-door-NTorella-Fotografie-6-min-scaled.jpg" alt="Showroom Keukenhuis Lochem" />
+    </div>
+  </section>
+
+  <section class="alt" id="reviews">
+    <div class="wrap">
+      <p class="eyebrow">Reviews</p>
+      <h2>Wat klanten zeggen</h2>
+      <div class="reviews">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Nicole heeft onze wensen vertaald in een geweldig ontwerp van de keuken, bijkeuken en slaapkamer kastenwand. … Super tevreden … Een aanrader!”</p>
+          <cite>Monique Tijs · Google</cite>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Wij hebben een prachtige keuken gekocht bij Keukenhuis Lochem. … Het eindresultaat is verbluffend en de service goed.”</p>
+          <cite>Arjan Kerkdijk · Google</cite>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Geweldig”</p>
+          <cite>Johan Nijkamp · Google</cite>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>Veelgestelde vragen vanuit Zutphen</h2>
+      <div class="faq">
+        <details open>
+          <summary>Werken jullie ook in Zutphen?</summary>
+          <p>Ja. We ontwerpen in onze showroom in Lochem en plaatsen de keuken bij jou thuis in Zutphen of Warnsveld. De showroom is ongeveer twintig minuten rijden.</p>
+        </details>
+        <details>
+          <summary>Moet ik eerst langs de showroom komen?</summary>
+          <p>Dat raden we sterk aan. Je ziet materialen in het echt en we nemen je wensen rustig door. Afspraak buiten openingstijden is vaak mogelijk via het formulier.</p>
+        </details>
+        <details>
+          <summary>Hoe ziet het complete traject eruit?</summary>
+          <p>Kennismaking → ontwerp op maat → offerte → productie &amp; planning → montage door eigen monteurs → nazorg. Je gaat pas verder als ontwerp en prijs kloppen.</p>
+        </details>
+        <details>
+          <summary>Wat kost een maatwerkkeuken?</summary>
+          <p>Dat hangt af van indeling, materialen en apparatuur. In het eerste gesprek geven we een eerlijke richting; daarna een concrete offerte op jouw ontwerp.</p>
+        </details>
+        <details>
+          <summary>Hoe lang duurt het tot plaatsing?</summary>
+          <p>Na akkoord plannen we productie en montage. Exacte doorlooptijd hangt af van materialen en planning — die bespreken we transparant.</p>
+        </details>
+        <details>
+          <summary>Plaatsen jullie zelf?</summary>
+          <p>Ja. Montage doen we met onze eigen mensen. Dat houdt de lijnen kort tussen ontwerp en oplevering.</p>
+        </details>
+        <details>
+          <summary>Kan ik alleen oriënteren?</summary>
+          <p>Ja. Het eerste gesprek is vrijblijvend en bedoeld om helder te krijgen wat je wilt — niet om je ergens in te duwen.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark" id="cta">
+    <div class="wrap cta-grid">
+      <div>
+        <p class="eyebrow">Volgende stap</p>
+        <h2>Klaar voor een keuken die klopt?</h2>
+        <p class="lede">Woon je in Zutphen en wil je maatwerk zonder druk? Plan je afspraak — of bel ons eerst kort.</p>
+        <p class="cta-meta">
+          <strong>Walderstraat 5, 7241 BH Lochem</strong><br />
+          0573-21 50 56 · info@keukenhuislochem.nl<br />
+          di–vr 10:00–17:30 · za 10:00–17:00<br />
+          Afspraak buiten openingstijden bespreekbaar
+        </p>
+        <a class="btn btn-primary" href="#formulier">Terug naar formulier</a>
+      </div>
+      <div>
+        <img src="https://keukenhuislochem.nl/wp-content/uploads/2025/10/Keukenhuis-Lochem-3.png" alt="Keukenhuis Lochem keuken" style="width:100%;aspect-ratio:4/3;object-fit:cover;" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Voorbeeld landingspagina voor websiteteam / klantpreview · Keukenhuis Lochem · niet live op de hoofdsite
+  </footer>
+</body>
+</html>
