@@ -1,5 +1,10 @@
 # Oplevering websiteteam — Keukenhuis Lochem LP
 
+## Live preview (klant)
+https://keukenhuis-lochem-lp-voorbeeld.vercel.app
+
+GitHub: https://github.com/paulliamwoeler/keukenhuis-lochem-lp-voorbeeld
+
 ## Bestand
 `lp-voorbeeld-websiteteam.html` — open in browser.
 
